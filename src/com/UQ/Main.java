@@ -51,6 +51,12 @@ public class Main {
                 parsedMN[1] = Short.parseShort(functionInputs[1]);
 
                 if (parsedMN[0] >= 0 && parsedMN[1] >= 0) {
+
+                    if ((parsedMN[0] > 3 || parsedMN[1] > 4)) {
+                        System.out.println("M > 3 or N > 4 will cause recursion stackOverflow, try with values lower.");
+                        return false;
+                    }
+
                     return true;
                 } else {
                     System.out.println("Usage: m,n : Positive integers only");
